@@ -23,16 +23,16 @@ load_dotenv()
 
 st.title('🦜🔗 Instruct embedding App')
 
-AZURE_VECTOR_STORE_ENDPOINT=os.environ.get('AZURE_VECTOR_STORE_ENDPOINT')
-AZURE_VECTOR_STORE_CREDENTIAL = os.environ.get('AZURE_VECTOR_STORE_CREDENTIAL')
-index_name_query = os.environ.get('index_name_query')
-index_name_docs = os.environ.get('index_name_docs')
-AZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')
-embedding_chunk_size=int(os.environ.get('embedding_chunk_size'))
-os.environ["AZURE_OPENAI_API_KEY"] = os.environ.get('AZURE_OPENAI_API_KEY')
-os.environ["AZURE_OPENAI_ENDPOINT"] = os.environ.get('AZURE_OPENAI_ENDPOINT')
-AZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')
-os.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')
+AZURE_VECTOR_STORE_ENDPOINT=st.secrets['AZURE_VECTOR_STORE_ENDPOINT']
+AZURE_VECTOR_STORE_CREDENTIAL = st.secrets['AZURE_VECTOR_STORE_CREDENTIAL']
+index_name_query = st.secrets['index_name_query']
+index_name_docs = st.secrets['index_name_docs']
+AZURE_OPENAI_API_INSTANCE_NAME_EMB = st.secrets['AZURE_OPENAI_API_INSTANCE_NAME_EMB']
+embedding_chunk_size=int(st.secrets['embedding_chunk_size'])
+AZURE_OPENAI_API_KEY = st.secrets['AZURE_OPENAI_API_KEY']
+AZURE_OPENAI_ENDPOINT= st.secrets['AZURE_OPENAI_ENDPOINT']
+AZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']
+OPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']
 
 index_client = SearchIndexClient(
         endpoint=AZURE_VECTOR_STORE_ENDPOINT,

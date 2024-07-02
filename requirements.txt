@@ -1,5 +1,5 @@
+streamlit
 langchain-openai
-rank_llm
 langchain==0.1.8
 InstructorEmbedding
 sentence-transformers==2.2.2

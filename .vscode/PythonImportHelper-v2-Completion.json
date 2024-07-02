@@ -205,7 +205,7 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "AZURE_VECTOR_STORE_CREDENTIAL = os.environ.get('AZURE_VECTOR_STORE_CREDENTIAL')\nindex_name_query = os.environ.get('index_name_query')\nindex_name_docs = os.environ.get('index_name_docs')\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(",
+        "peekOfCode": "AZURE_VECTOR_STORE_CREDENTIAL = st.secrets['AZURE_VECTOR_STORE_CREDENTIAL']\nindex_name_query = st.secrets['index_name_query']\nindex_name_docs = st.secrets['index_name_docs']\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = st.secrets['AZURE_OPENAI_API_INSTANCE_NAME_EMB']\nembedding_chunk_size=int(st.secrets['embedding_chunk_size'])\nAZURE_OPENAI_API_KEY = st.secrets['AZURE_OPENAI_API_KEY']\nAZURE_OPENAI_ENDPOINT= st.secrets['AZURE_OPENAI_ENDPOINT']\nAZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']\nOPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']\nindex_client = SearchIndexClient(",
         "detail": "streamlit_app",
         "documentation": {}
     },
@@ -214,7 +214,7 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "index_name_query = os.environ.get('index_name_query')\nindex_name_docs = os.environ.get('index_name_docs')\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,",
+        "peekOfCode": "index_name_query = st.secrets['index_name_query']\nindex_name_docs = st.secrets['index_name_docs']\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = st.secrets['AZURE_OPENAI_API_INSTANCE_NAME_EMB']\nembedding_chunk_size=int(st.secrets['embedding_chunk_size'])\nAZURE_OPENAI_API_KEY = st.secrets['AZURE_OPENAI_API_KEY']\nAZURE_OPENAI_ENDPOINT= st.secrets['AZURE_OPENAI_ENDPOINT']\nAZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']\nOPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,",
         "detail": "streamlit_app",
         "documentation": {}
     },
@@ -223,7 +223,7 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "index_name_docs = os.environ.get('index_name_docs')\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),",
+        "peekOfCode": "index_name_docs = st.secrets['index_name_docs']\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = st.secrets['AZURE_OPENAI_API_INSTANCE_NAME_EMB']\nembedding_chunk_size=int(st.secrets['embedding_chunk_size'])\nAZURE_OPENAI_API_KEY = st.secrets['AZURE_OPENAI_API_KEY']\nAZURE_OPENAI_ENDPOINT= st.secrets['AZURE_OPENAI_ENDPOINT']\nAZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']\nOPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),",
         "detail": "streamlit_app",
         "documentation": {}
     },
@@ -232,25 +232,16 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "AZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )",
+        "peekOfCode": "AZURE_OPENAI_API_INSTANCE_NAME_EMB = st.secrets['AZURE_OPENAI_API_INSTANCE_NAME_EMB']\nembedding_chunk_size=int(st.secrets['embedding_chunk_size'])\nAZURE_OPENAI_API_KEY = st.secrets['AZURE_OPENAI_API_KEY']\nAZURE_OPENAI_ENDPOINT= st.secrets['AZURE_OPENAI_ENDPOINT']\nAZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']\nOPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )",
         "detail": "streamlit_app",
         "documentation": {}
     },
     {
-        "label": "os.environ[\"AZURE_OPENAI_API_KEY\"]",
+        "label": "AZURE_OPENAI_API_KEY",
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "os.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(",
-        "detail": "streamlit_app",
-        "documentation": {}
-    },
-    {
-        "label": "os.environ[\"AZURE_OPENAI_ENDPOINT\"]",
-        "kind": 5,
-        "importPath": "streamlit_app",
-        "description": "streamlit_app",
-        "peekOfCode": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,",
+        "peekOfCode": "AZURE_OPENAI_API_KEY = st.secrets['AZURE_OPENAI_API_KEY']\nAZURE_OPENAI_ENDPOINT= st.secrets['AZURE_OPENAI_ENDPOINT']\nAZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']\nOPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(",
         "detail": "streamlit_app",
         "documentation": {}
     },
@@ -259,16 +250,16 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "AZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,",
+        "peekOfCode": "AZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']\nOPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,",
         "detail": "streamlit_app",
         "documentation": {}
     },
     {
-        "label": "os.environ['OPENAI_API_VERSION']",
+        "label": "OPENAI_API_VERSION",
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "os.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,\n    )",
+        "peekOfCode": "OPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,\n    )",
         "detail": "streamlit_app",
         "documentation": {}
     },
