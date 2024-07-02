@@ -1,0 +1,374 @@
+[
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "langchain.prompts.prompt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "langchain.prompts.prompt",
+        "description": "langchain.prompts.prompt",
+        "detail": "langchain.prompts.prompt",
+        "documentation": {}
+    },
+    {
+        "label": "langchain_community.chat_models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "HuggingFaceInstructEmbeddings",
+        "importPath": "langchain_community.embeddings",
+        "description": "langchain_community.embeddings",
+        "isExtraImport": true,
+        "detail": "langchain_community.embeddings",
+        "documentation": {}
+    },
+    {
+        "label": "AzureOpenAIEmbeddings",
+        "importPath": "langchain_community.embeddings",
+        "description": "langchain_community.embeddings",
+        "isExtraImport": true,
+        "detail": "langchain_community.embeddings",
+        "documentation": {}
+    },
+    {
+        "label": "AzureSearch",
+        "importPath": "langchain_community.vectorstores.azuresearch",
+        "description": "langchain_community.vectorstores.azuresearch",
+        "isExtraImport": true,
+        "detail": "langchain_community.vectorstores.azuresearch",
+        "documentation": {}
+    },
+    {
+        "label": "SearchIndexClient",
+        "importPath": "azure.search.documents.indexes",
+        "description": "azure.search.documents.indexes",
+        "isExtraImport": true,
+        "detail": "azure.search.documents.indexes",
+        "documentation": {}
+    },
+    {
+        "label": "AzureKeyCredential",
+        "importPath": "azure.core.credentials",
+        "description": "azure.core.credentials",
+        "isExtraImport": true,
+        "detail": "azure.core.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "AzureOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
+        "label": "AzureChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
+        "label": "RetrievalQA",
+        "importPath": "langchain.chains",
+        "description": "langchain.chains",
+        "isExtraImport": true,
+        "detail": "langchain.chains",
+        "documentation": {}
+    },
+    {
+        "label": "create_retrieval_chain",
+        "importPath": "langchain.chains",
+        "description": "langchain.chains",
+        "isExtraImport": true,
+        "detail": "langchain.chains",
+        "documentation": {}
+    },
+    {
+        "label": "PromptTemplate",
+        "importPath": "langchain.prompts",
+        "description": "langchain.prompts",
+        "isExtraImport": true,
+        "detail": "langchain.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "textwrap",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "textwrap",
+        "description": "textwrap",
+        "detail": "textwrap",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain_core.prompts",
+        "description": "langchain_core.prompts",
+        "isExtraImport": true,
+        "detail": "langchain_core.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "create_stuff_documents_chain",
+        "importPath": "langchain.chains.combine_documents",
+        "description": "langchain.chains.combine_documents",
+        "isExtraImport": true,
+        "detail": "langchain.chains.combine_documents",
+        "documentation": {}
+    },
+    {
+        "label": "ContextualCompressionRetriever",
+        "importPath": "langchain.retrievers.contextual_compression",
+        "description": "langchain.retrievers.contextual_compression",
+        "isExtraImport": true,
+        "detail": "langchain.retrievers.contextual_compression",
+        "documentation": {}
+    },
+    {
+        "label": "FlashrankRerank",
+        "importPath": "langchain.retrievers.document_compressors",
+        "description": "langchain.retrievers.document_compressors",
+        "isExtraImport": true,
+        "detail": "langchain.retrievers.document_compressors",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "get_query_topic",
+        "kind": 2,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "def get_query_topic(query,vector_store_queries):\n    docs = vector_store_queries.similarity_search(\n        query=query,\n        k=3,\n        search_type=\"similarity\",\n    )\n    topic=docs[0].metadata['topic']\n    return topic\ndef get_db_retriever(topic):\n    query_embeddings = HuggingFaceInstructEmbeddings(",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_retriever",
+        "kind": 2,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "def get_db_retriever(topic):\n    query_embeddings = HuggingFaceInstructEmbeddings(\n                    query_instruction=f\"Represent the {topic} query for retrieving: \"\n                )\n    vector_store_docs = AzureSearch(\n                    azure_search_endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n                    azure_search_key=AZURE_VECTOR_STORE_CREDENTIAL,\n                    index_name=index_name_docs,\n                    embedding_function=query_embeddings.embed_query,\n                    fields=fields,",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "wrap_text_preserve_newlines",
+        "kind": 2,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "def wrap_text_preserve_newlines(text, width=110):\n    # Split the input text into lines based on newline characters\n    lines = text.split('\\n')\n    # Wrap each line individually\n    wrapped_lines = [textwrap.fill(line, width=width) for line in lines]\n    # Join the wrapped lines back together using newline characters\n    wrapped_text = '\\n'.join(wrapped_lines)\n    return wrapped_text\ndef process_llm_response(llm_response):\n    print(wrap_text_preserve_newlines(llm_response['result']))",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "process_llm_response",
+        "kind": 2,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "def process_llm_response(llm_response):\n    print(wrap_text_preserve_newlines(llm_response['result']))\n    print('\\n\\nSources:')\n    for source in llm_response[\"source_documents\"]:\n        print(source.metadata['source'])\nsystem_prompt = (\n    \"You are an assistant for question-answering tasks. \"\n    \"Use the following pieces of most relevant retrieved context to answer \"\n    \"the question. If you don't know the answer, say that you \"\n    \"don't know. Use three sentences maximum and keep the \"",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "AZURE_VECTOR_STORE_CREDENTIAL",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "AZURE_VECTOR_STORE_CREDENTIAL = os.environ.get('AZURE_VECTOR_STORE_CREDENTIAL')\nindex_name_query = os.environ.get('index_name_query')\nindex_name_docs = os.environ.get('index_name_docs')\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "index_name_query",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "index_name_query = os.environ.get('index_name_query')\nindex_name_docs = os.environ.get('index_name_docs')\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "index_name_docs",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "index_name_docs = os.environ.get('index_name_docs')\nAZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "AZURE_OPENAI_API_INSTANCE_NAME_EMB",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "AZURE_OPENAI_API_INSTANCE_NAME_EMB = os.environ.get('AZURE_OPENAI_API_INSTANCE_NAME_EMB')\nembedding_chunk_size=int(os.environ.get('embedding_chunk_size'))\nos.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"AZURE_OPENAI_API_KEY\"]",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "os.environ[\"AZURE_OPENAI_API_KEY\"] = os.environ.get('AZURE_OPENAI_API_KEY')\nos.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"AZURE_OPENAI_ENDPOINT\"]",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = os.environ.get('AZURE_OPENAI_ENDPOINT')\nAZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "AZURE_OPENAI_DEPLOYMENT_NAME",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "AZURE_OPENAI_DEPLOYMENT_NAME = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME')\nos.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ['OPENAI_API_VERSION']",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "os.environ['OPENAI_API_VERSION'] = os.environ.get('OPENAI_API_VERSION')\nindex_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,\n    )",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "index_client",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "index_client = SearchIndexClient(\n        endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n        credential=AzureKeyCredential(AZURE_VECTOR_STORE_CREDENTIAL),\n    )\nindex = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,\n    )\ndef get_query_topic(query,vector_store_queries):",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "index = index_client.get_index(index_name_query)\nazure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,\n    )\ndef get_query_topic(query,vector_store_queries):\n    docs = vector_store_queries.similarity_search(\n        query=query,\n        k=3,\n        search_type=\"similarity\",",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "azure_embeddings",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "azure_embeddings = AzureOpenAIEmbeddings(\n        azure_deployment=AZURE_OPENAI_API_INSTANCE_NAME_EMB,\n        chunk_size=embedding_chunk_size,\n    )\ndef get_query_topic(query,vector_store_queries):\n    docs = vector_store_queries.similarity_search(\n        query=query,\n        k=3,\n        search_type=\"similarity\",\n    )",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "system_prompt",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "system_prompt = (\n    \"You are an assistant for question-answering tasks. \"\n    \"Use the following pieces of most relevant retrieved context to answer \"\n    \"the question. If you don't know the answer, say that you \"\n    \"don't know. Use three sentences maximum and keep the \"\n    \"answer concise.\"\n    \"\\n\\n\"\n    \"{context}\"\n)\nprompt = ChatPromptTemplate.from_messages(",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "prompt",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "prompt = ChatPromptTemplate.from_messages(\n    [\n        (\"system\", system_prompt),\n        (\"human\", \"{input}\"),\n    ]\n)\nfields=index.fields\nvector_store_queries = AzureSearch(\n                azure_search_endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n                azure_search_key=AZURE_VECTOR_STORE_CREDENTIAL,",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "vector_store_queries",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "vector_store_queries = AzureSearch(\n                azure_search_endpoint=AZURE_VECTOR_STORE_ENDPOINT,\n                azure_search_key=AZURE_VECTOR_STORE_CREDENTIAL,\n                index_name=index_name_query,\n                embedding_function=azure_embeddings.embed_query,\n                fields=fields,\n            )\nllm=AzureChatOpenAI(deployment_name=AZURE_OPENAI_DEPLOYMENT_NAME,temperature=0)\nquestion_answer_chain = create_stuff_documents_chain(llm, prompt)\nquery = st.text_input(\"Please input your question\")",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "question_answer_chain",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "question_answer_chain = create_stuff_documents_chain(llm, prompt)\nquery = st.text_input(\"Please input your question\")\ntopic=get_query_topic(query,vector_store_queries)\nretriever=get_db_retriever(topic)\nFlashrankRerank.update_forward_refs()\ncompressor = FlashrankRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "query",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "query = st.text_input(\"Please input your question\")\ntopic=get_query_topic(query,vector_store_queries)\nretriever=get_db_retriever(topic)\nFlashrankRerank.update_forward_refs()\ncompressor = FlashrankRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "compressor",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "compressor = FlashrankRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']\nst.write(results)",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "compression_retriever",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "compression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']\nst.write(results)",
+        "detail": "streamlit_app",
+        "documentation": {}
+    },
+    {
+        "label": "rag_chain",
+        "kind": 5,
+        "importPath": "streamlit_app",
+        "description": "streamlit_app",
+        "peekOfCode": "rag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']\nst.write(results)",
+        "detail": "streamlit_app",
+        "documentation": {}
+    }
+]

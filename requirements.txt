@@ -1,0 +1,9 @@
+langchain-openai
+rank_llm
+langchain==0.1.8
+InstructorEmbedding
+sentence-transformers==2.2.2
+langchain-community
+azure-search-documents==11.4.0
+azure-identity
+flashrank
