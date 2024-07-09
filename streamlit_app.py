@@ -126,7 +126,7 @@ question_answer_chain = create_stuff_documents_chain(llm, llm_prompt)
 if prompt := st.chat_input():
       st.session_state.messages.append({"role": "assistant", "content": prompt})
       st.chat_message("assistant").write(prompt)
-      topic=get_query_topic(st.session_state.messages,vector_store_queries)
+      topic=get_query_topic(prompt,vector_store_queries)
       retriever=get_db_retriever(topic)
       compressor = FlashrankRerank()
       compression_retriever = ContextualCompressionRetriever(
