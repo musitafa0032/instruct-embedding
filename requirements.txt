@@ -1,9 +1,9 @@
 streamlit
 langchain-openai
-langchain==0.1.8
+langchain
 InstructorEmbedding
 sentence-transformers==2.2.2
 langchain-community
 azure-search-documents==11.4.0
 azure-identity
-flashrank
+rank_llm
