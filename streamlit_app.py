@@ -3,13 +3,13 @@ import streamlit as st
 # import langchain_community.chat_models
 from langchain_community.embeddings import HuggingFaceInstructEmbeddings
 from langchain_community.vectorstores.azuresearch import AzureSearch
-from langchain_community.embeddings import AzureOpenAIEmbeddings
+from llangchain_openai import AzureOpenAIEmbeddings
 from azure.search.documents.indexes import SearchIndexClient
 from azure.core.credentials import AzureKeyCredential
 from langchain_openai import AzureChatOpenAI
 # from langchain.chains import RetrievalQA
 # from langchain.prompts import PromptTemplate
-# import os
+import os
 import textwrap
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
@@ -30,10 +30,10 @@ index_name_query = st.secrets['index_name_query']
 index_name_docs = st.secrets['index_name_docs']
 AZURE_OPENAI_API_INSTANCE_NAME_EMB = st.secrets['AZURE_OPENAI_API_INSTANCE_NAME_EMB']
 embedding_chunk_size=int(st.secrets['embedding_chunk_size'])
-AZURE_OPENAI_API_KEY = st.secrets['AZURE_OPENAI_API_KEY']
-AZURE_OPENAI_ENDPOINT= st.secrets['AZURE_OPENAI_ENDPOINT']
+os.environ["AZURE_OPENAI_API_KEY"] = st.secrets['AZURE_OPENAI_API_KEY']
+os.environ["AZURE_OPENAI_ENDPOINT"]= st.secrets['AZURE_OPENAI_ENDPOINT']
 AZURE_OPENAI_DEPLOYMENT_NAME = st.secrets['AZURE_OPENAI_DEPLOYMENT_NAME']
-OPENAI_API_VERSION = st.secrets['OPENAI_API_VERSION']
+os.environ['OPENAI_API_VERSION'] = st.secrets['OPENAI_API_VERSION']
 
 index_client = SearchIndexClient(
         endpoint=AZURE_VECTOR_STORE_ENDPOINT,
