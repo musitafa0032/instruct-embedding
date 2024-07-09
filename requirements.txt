@@ -6,4 +6,4 @@ sentence-transformers==2.2.2
 langchain-community
 azure-search-documents==11.4.0
 azure-identity
-rank_llm
+# rank_llm
