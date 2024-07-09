@@ -29,6 +29,8 @@ if "messages" not in st.session_state:
 for msg in st.session_state.messages:
       st.chat_message(msg["role"]).write(msg["content"])
 
+
+
 AZURE_VECTOR_STORE_ENDPOINT=st.secrets['AZURE_VECTOR_STORE_ENDPOINT']
 AZURE_VECTOR_STORE_CREDENTIAL = st.secrets['AZURE_VECTOR_STORE_CREDENTIAL']
 index_name_query = st.secrets['index_name_query']
@@ -121,7 +123,6 @@ vector_store_queries = AzureSearch(
 llm=AzureChatOpenAI(deployment_name=AZURE_OPENAI_DEPLOYMENT_NAME,temperature=0)
 question_answer_chain = create_stuff_documents_chain(llm, prompt)
 
-query = st.text_input("Please input your question")
 topic=get_query_topic(query,vector_store_queries)
 retriever=get_db_retriever(topic)
 
@@ -130,8 +131,10 @@ compression_retriever = ContextualCompressionRetriever(
     base_compressor=compressor, base_retriever=retriever
 )
 rag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)
-results=rag_chain.invoke({"input": query})['answer']
-      
-st.session_state.messages.append({"role": "assistant", "content": results})
-st.chat_message("assistant").write(results)
+if prompt := st.chat_input():
+      st.session_state.messages.append({"role": "assistant", "content": prompt})
+      st.chat_message("assistant").write(prompt)
+      results=rag_chain.invoke({"input": st.session_state.messages)})['answer']
+      st.session_state.messages.append({"role": "assistant", "content": results})
+      st.chat_message("assistant").write(results)
 
