@@ -8,3 +8,4 @@ azure-search-documents==11.4.0
 azure-identity
 python-dotenv
 flashrank
+llama-cpp-python==0.1.48
