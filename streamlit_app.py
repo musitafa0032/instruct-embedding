@@ -20,9 +20,14 @@ from dotenv import load_dotenv
 # from langchain_community.document_compressors.rankllm_rerank import RankLLMRerank
 
 
-load_dotenv()
 
 st.title('🦜🔗 Instruct embedding App')
+
+if "messages" not in st.session_state:
+      st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+
+  for msg in st.session_state.messages:
+      st.chat_message(msg["role"]).write(msg["content"])
 
 AZURE_VECTOR_STORE_ENDPOINT=st.secrets['AZURE_VECTOR_STORE_ENDPOINT']
 AZURE_VECTOR_STORE_CREDENTIAL = st.secrets['AZURE_VECTOR_STORE_CREDENTIAL']
@@ -126,5 +131,7 @@ compression_retriever = ContextualCompressionRetriever(
 )
 rag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)
 results=rag_chain.invoke({"input": query})['answer']
-st.write(results)
+      
+st.session_state.messages.append({"role": "assistant", "content": results})
+st.chat_message("assistant").write(results)
 
