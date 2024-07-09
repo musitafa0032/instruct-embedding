@@ -133,7 +133,7 @@ if prompt := st.chat_input():
           base_compressor=compressor, base_retriever=retriever
       )
       rag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)
-      results=rag_chain.invoke({"input": st.session_state.messages})['answer']
+      results=rag_chain.invoke({"input": prompt})['answer']
       st.session_state.messages.append({"role": "assistant", "content": results})
       st.chat_message("assistant").write(results)
 
