@@ -6,4 +6,5 @@ sentence-transformers==2.2.2
 langchain-community
 azure-search-documents==11.4.0
 azure-identity
+python-dotenv
 # rank_llm
