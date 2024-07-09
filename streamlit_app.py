@@ -17,7 +17,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
 from langchain.retrievers.document_compressors import FlashrankRerank
 from dotenv import load_dotenv
-from langchain_community.document_compressors.rankllm_rerank import RankLLMRerank
+# from langchain_community.document_compressors.rankllm_rerank import RankLLMRerank
 
 
 load_dotenv()
@@ -120,7 +120,7 @@ query = st.text_input("Please input your question")
 topic=get_query_topic(query,vector_store_queries)
 retriever=get_db_retriever(topic)
 
-compressor = RankLLMRerank()
+compressor = FlashrankRerank()
 compression_retriever = ContextualCompressionRetriever(
     base_compressor=compressor, base_retriever=retriever
 )

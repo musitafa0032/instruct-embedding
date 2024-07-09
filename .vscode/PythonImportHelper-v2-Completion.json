@@ -123,14 +123,6 @@
         "documentation": {}
     },
     {
-        "label": "RankLLMRerank",
-        "importPath": "langchain_community.document_compressors.rankllm_rerank",
-        "description": "langchain_community.document_compressors.rankllm_rerank",
-        "isExtraImport": true,
-        "detail": "langchain_community.document_compressors.rankllm_rerank",
-        "documentation": {}
-    },
-    {
         "label": "get_query_topic",
         "kind": 2,
         "importPath": "streamlit_app",
@@ -288,7 +280,7 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "question_answer_chain = create_stuff_documents_chain(llm, prompt)\nquery = st.text_input(\"Please input your question\")\ntopic=get_query_topic(query,vector_store_queries)\nretriever=get_db_retriever(topic)\ncompressor = RankLLMRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']",
+        "peekOfCode": "question_answer_chain = create_stuff_documents_chain(llm, prompt)\nquery = st.text_input(\"Please input your question\")\ntopic=get_query_topic(query,vector_store_queries)\nretriever=get_db_retriever(topic)\ncompressor = FlashrankRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']",
         "detail": "streamlit_app",
         "documentation": {}
     },
@@ -297,7 +289,7 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "query = st.text_input(\"Please input your question\")\ntopic=get_query_topic(query,vector_store_queries)\nretriever=get_db_retriever(topic)\ncompressor = RankLLMRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']\nst.write(results)",
+        "peekOfCode": "query = st.text_input(\"Please input your question\")\ntopic=get_query_topic(query,vector_store_queries)\nretriever=get_db_retriever(topic)\ncompressor = FlashrankRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']\nst.write(results)",
         "detail": "streamlit_app",
         "documentation": {}
     },
@@ -306,7 +298,7 @@
         "kind": 5,
         "importPath": "streamlit_app",
         "description": "streamlit_app",
-        "peekOfCode": "compressor = RankLLMRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']\nst.write(results)",
+        "peekOfCode": "compressor = FlashrankRerank()\ncompression_retriever = ContextualCompressionRetriever(\n    base_compressor=compressor, base_retriever=retriever\n)\nrag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)\nresults=rag_chain.invoke({\"input\": query})['answer']\nst.write(results)",
         "detail": "streamlit_app",
         "documentation": {}
     },
