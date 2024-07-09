@@ -1,15 +1,15 @@
 import streamlit as st
-import langchain.prompts.prompt
-import langchain_community.chat_models
+# import langchain.prompts.prompt
+# import langchain_community.chat_models
 from langchain_community.embeddings import HuggingFaceInstructEmbeddings
 from langchain_community.vectorstores.azuresearch import AzureSearch
 from langchain_community.embeddings import AzureOpenAIEmbeddings
 from azure.search.documents.indexes import SearchIndexClient
 from azure.core.credentials import AzureKeyCredential
-from langchain_openai import AzureOpenAI,AzureChatOpenAI
-from langchain.chains import RetrievalQA
-from langchain.prompts import PromptTemplate
-import os
+from langchain_openai import AzureChatOpenAI
+# from langchain.chains import RetrievalQA
+# from langchain.prompts import PromptTemplate
+# import os
 import textwrap
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
@@ -17,6 +17,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.retrievers.contextual_compression import ContextualCompressionRetriever
 from langchain.retrievers.document_compressors import FlashrankRerank
 from dotenv import load_dotenv
+from langchain_community.document_compressors.rankllm_rerank import RankLLMRerank
 
 
 load_dotenv()
@@ -65,7 +66,7 @@ def get_db_retriever(topic):
                     embedding_function=query_embeddings.embed_query,
                     fields=fields,
                 )
-    retriever=vector_store_docs.as_retriever(k=5)
+    retriever=vector_store_docs.as_retriever(k=4,type='hybrid')
     return retriever
 
 def wrap_text_preserve_newlines(text, width=110):
@@ -118,8 +119,8 @@ question_answer_chain = create_stuff_documents_chain(llm, prompt)
 query = st.text_input("Please input your question")
 topic=get_query_topic(query,vector_store_queries)
 retriever=get_db_retriever(topic)
-FlashrankRerank.update_forward_refs()
-compressor = FlashrankRerank()
+
+compressor = RankLLMRerank()
 compression_retriever = ContextualCompressionRetriever(
     base_compressor=compressor, base_retriever=retriever
 )
