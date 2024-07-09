@@ -26,10 +26,18 @@
     },
     {
         "label": "AzureOpenAIEmbeddings",
-        "importPath": "llangchain_openai",
-        "description": "llangchain_openai",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
         "isExtraImport": true,
-        "detail": "llangchain_openai",
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
+        "label": "AzureChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
         "documentation": {}
     },
     {
@@ -46,14 +54,6 @@
         "description": "azure.core.credentials",
         "isExtraImport": true,
         "detail": "azure.core.credentials",
-        "documentation": {}
-    },
-    {
-        "label": "AzureChatOpenAI",
-        "importPath": "langchain_openai",
-        "description": "langchain_openai",
-        "isExtraImport": true,
-        "detail": "langchain_openai",
         "documentation": {}
     },
     {

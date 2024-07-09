@@ -3,7 +3,7 @@ import streamlit as st
 # import langchain_community.chat_models
 from langchain_community.embeddings import HuggingFaceInstructEmbeddings
 from langchain_community.vectorstores.azuresearch import AzureSearch
-from llangchain_openai import AzureOpenAIEmbeddings
+from langchain_openai import AzureOpenAIEmbeddings
 from azure.search.documents.indexes import SearchIndexClient
 from azure.core.credentials import AzureKeyCredential
 from langchain_openai import AzureChatOpenAI
