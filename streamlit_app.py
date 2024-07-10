@@ -121,8 +121,6 @@ vector_store_queries = AzureSearch(
             )
 
 llm=AzureChatOpenAI(deployment_name=AZURE_OPENAI_DEPLOYMENT_NAME,temperature=0)
-question_answer_chain = create_stuff_documents_chain(llm, llm_prompt)
-
 if prompt := st.chat_input():
       st.session_state.messages.append({"role": "assistant", "content": prompt})
       st.chat_message("assistant").write(prompt)
