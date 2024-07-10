@@ -120,11 +120,12 @@ vector_store_queries = AzureSearch(
                 fields=fields,
             )
 
-llm=AzureChatOpenAI(deployment_name=AZURE_OPENAI_DEPLOYMENT_NAME,temperature=0)
 if prompt := st.chat_input():
       st.session_state.messages.append({"role": "assistant", "content": prompt})
       st.chat_message("assistant").write(prompt)
       with st.spinner('Searching...'):
+            llm=AzureChatOpenAI(deployment_name=AZURE_OPENAI_DEPLOYMENT_NAME,temperature=0)
+            question_answer_chain = create_stuff_documents_chain(llm, llm_prompt)
             topic=get_query_topic(prompt,vector_store_queries)
             retriever=get_db_retriever(topic)
             compressor = FlashrankRerank()
