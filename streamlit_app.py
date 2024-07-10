@@ -124,7 +124,6 @@ llm=AzureChatOpenAI(deployment_name=AZURE_OPENAI_DEPLOYMENT_NAME,temperature=0)
 if prompt := st.chat_input():
       st.session_state.messages.append({"role": "assistant", "content": prompt})
       st.chat_message("assistant").write(prompt)
-      rag_chain = create_retrieval_chain(compression_retriever, question_answer_chain)
       with st.spinner('Searching...'):
             topic=get_query_topic(prompt,vector_store_queries)
             retriever=get_db_retriever(topic)
