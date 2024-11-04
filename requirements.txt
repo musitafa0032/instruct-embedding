@@ -1,6 +1,6 @@
 streamlit
 langchain-openai
-langchain==0.1.8
+langchain==0.3.7
 InstructorEmbedding
 sentence-transformers==2.2.2
 langchain-community
